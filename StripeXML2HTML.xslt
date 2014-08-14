@@ -14,9 +14,17 @@ th {background: #ddd; padding: 3px 3px 0px 5px;}
 
 tr:nth-child(even) {background: #f5f5f5;}
 </style>
-        <h1><xsl:text disable-output-escaping="yes"><![CDATA[Verk&auml;ufe &uuml;ber Stripe mit IHPayment]]></xsl:text></h1>
+        <h1><xsl:text disable-output-escaping="yes"><![CDATA[Verk&auml;ufe &uuml;ber Stripe]]></xsl:text></h1>
         
          <h2>Zusammenfassung</h2>
+          <xsl:text disable-output-escaping="yes"><![CDATA[Einnahmen gesamt: ]]></xsl:text>
+          <b><xsl:value-of select="sum(/transactions/transaction/Converted-Amount)"/>
+          <xsl:text disable-output-escaping="yes"><![CDATA[ &euro;]]></xsl:text></b><br/>
+          
+          <xsl:text disable-output-escaping="yes"><![CDATA[Einbehaltene Stripe-Geb&uuml;hren: ]]></xsl:text>
+          <b><xsl:value-of select="sum(/transactions/transaction/Fees)"/>
+          <xsl:text disable-output-escaping="yes"><![CDATA[ &euro;]]></xsl:text></b><br/>
+         
  		 <xsl:text disable-output-escaping="yes"><![CDATA[F&auml;llige &Uuml;berweisungssumme: ]]></xsl:text>
           <b><xsl:value-of select="sum(/transactions/transaction/Net)"/>
           <xsl:text disable-output-escaping="yes"><![CDATA[ &euro;]]></xsl:text></b>
