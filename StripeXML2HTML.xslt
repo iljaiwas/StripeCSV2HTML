@@ -18,7 +18,7 @@ tr:nth-child(even) {background: #f5f5f5;}
         
          <h2>Zusammenfassung</h2>
           <xsl:text disable-output-escaping="yes"><![CDATA[Einnahmen gesamt: ]]></xsl:text>
-          <b><xsl:value-of select="sum(/transactions/transaction/Converted-Amount)"/>
+          <b><xsl:value-of select="format-number(sum(/transactions/transaction/Converted-Amount), '0.00')"/>
           <xsl:text disable-output-escaping="yes"><![CDATA[ &euro;]]></xsl:text></b><br/>
           
           <xsl:text disable-output-escaping="yes"><![CDATA[Einbehaltene Stripe-Geb&uuml;hren: ]]></xsl:text>
